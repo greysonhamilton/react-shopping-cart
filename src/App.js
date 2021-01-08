@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Route } from 'react-router-dom';
 import data from './data';
 
-import { ProductContext } from './components/contexts/ProductContext';
+import { ProductContext } from './contexts/ProductContext';
 // Components
 import Navigation from './components/Navigation';
 import Products from './components/Products';
@@ -22,15 +22,25 @@ function App() {
 
 	};
 
-	const removeItem = (item) => {
+	const removeItem = (itemId) => {
 
 		setCart(
 			cart.filter((item) => {
-				if(item.id !== itemId){
-					return item;
-				}
 
-			}));
+				if(item.id !== itemId){
+					console.log(item);
+					console.log(item.id);
+					console.log(itemId);
+					return item;
+
+				} else {
+
+				console.log(item);
+				console.log(item.id);
+				console.log(itemId);
+			}
+
+		}));
 
 	}
 
